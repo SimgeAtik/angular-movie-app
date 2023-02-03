@@ -1,0 +1,29 @@
+
+<div class="row">
+    <img src="/assets/images/avatar7.png" alt="">
+    <div class="col-6 mx-auto ">    
+        <div *ngIf="error" class="alert alert-danger">
+            {{ error }}
+        </div>
+        <form class="form-group" *ngIf="!loading" #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+            <div class="mb-3">
+                <label for="email" class="form-label" style="color: #F49D1A;"> <b>Email</b> </label>
+                <input type="email" required email ngModel name="email" id="email" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label" style="color: #F49D1A;"> <b>Şifre</b> </label>
+                <input type="password" required minlength="6" ngModel name="password" id="password" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-primary" [disabled]="!authForm.valid">{{ isLoginMode ? 'Giriş yap':'Kayıt ol' }}</button>
+            <button type="button" class="btn btn-danger ms-2" (click)="onToggleMode()">
+                Değiştir : {{ isLoginMode ? 'Kayıt ol':'Giriş yap' }}</button>
+        </form>
+
+        <div  *ngIf="loading" class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+</div>
+
+

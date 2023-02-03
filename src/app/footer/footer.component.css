@@ -1,0 +1,31 @@
+footer{
+    background: linear-gradient(to right, rgb(5, 5, 145), rgb(188, 96, 168));
+    height: auto;
+    width: 100%;
+    padding-top: 40px;
+    color: #fff; 
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    
+}
+.footer-content h3{
+    font: 10 3rem Montserrat;
+    padding: 3 rem;
+    border-radius:  .2rem;
+    text-shadow: .05rem  .05rem red, -.04rem  -.04rem cyan;
+}
+.footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+    padding-bottom: 30px;
+}
+
+
+

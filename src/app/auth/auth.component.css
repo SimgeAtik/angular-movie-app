@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.form-control{
+    height: 40px;
+}
+.row{
+   margin-top: 180px;  
+   margin-bottom: 200px;
+}
+.row img{
+    position: absolute;
+    width: 170px;
+    top: 180px;
+    left: calc(50% - 80px);
+}
+.form-group{
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 80px 40px 40px;
+    box-shadow: 0 15px 25px white;
+    
+}
+.btn{
+    height: 50px;
+    width: 80px;
+}
+.btn:hover{
+    color: blueviolet;
+}
+.form-group b{
+    font-size: 20px
+}

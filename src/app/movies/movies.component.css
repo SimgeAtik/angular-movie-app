@@ -1,0 +1,20 @@
+
+html{
+    scroll-behavior: smooth;
+}
+div.card{
+    background-color: #f3e4f2;
+    padding:2px;
+    box-shadow: 3px 3px 20px #000;
+}
+.card-body{
+    height: 70px;
+}
+.card:hover{
+    transform: scale(1.2);
+    z-index: 2;
+    transition: 0.5s;
+}
+.card-title{
+    font-weight: bold;
+}

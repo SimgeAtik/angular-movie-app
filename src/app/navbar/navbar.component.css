@@ -1,0 +1,30 @@
+nav{
+    background: linear-gradient(to right, rgb(5, 5, 145), rgb(188, 96, 168));
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.navbar-brand{
+   font: 10 3rem Montserrat;
+   padding: 3 rem;
+   border-radius:  .2rem;
+   text-shadow: .05rem  .05rem red, -.04rem  -.04rem cyan;
+                
+}
+.nav-item{
+    font-size: 30px;
+}
+.nav-link:hover{
+    color: white;
+    border-radius: 10px;
+    background-color: #F49D1A ;
+    opacity: 0.9;
+}
+.dropdown-menu{
+    width: 300px;
+    border-radius: 10px;
+}
+
+

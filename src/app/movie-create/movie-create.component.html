@@ -1,0 +1,96 @@
+<h1 style="color: white;">Film Ekle</h1>
+
+<form [formGroup]="movieForm "  (ngSubmit)="createMovie()" class="form-group">
+
+    <div class="mb-3">
+        <label for="title" class="form-label"><b>Başlık</b></label>
+        <input   type="text" name="title" class="form-control" formControlName="title">
+        value: {{ movieForm.value.title}}
+        <div class="alert alert-danger" *ngIf="title.invalid && title.touched">
+            gerekli alan   
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="description" class="form-label"><b>Açıklama</b></label>
+        <textarea class="form-control"  name="description" formControlName="description" ></textarea>
+        <div class="alert alert-danger" *ngIf="description.invalid && description.touched">
+            gerekli alan   
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="director" class="form-label"><b>yönetmen</b></label>
+        <textarea class="form-control"  name="director" formControlName="director" ></textarea>
+        <div class="alert alert-danger" *ngIf="director.invalid && director.touched">
+            gerekli alan   
+        </div>
+    </div>
+
+     <div class="mb-3">
+        <label for="actors" class="form-label"><b>Oyuncular</b></label>
+        <textarea class="form-control"  name="actors" formControlName="actors" ></textarea>
+        <div class="alert alert-danger" *ngIf="actors.invalid && actors.touched">
+            gerekli alan   
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="releaseDate" class="form-label"><b>Yapım</b></label>
+        <textarea class="form-control"  name="releaseDate" formControlName="releaseDate" ></textarea>
+        <div class="alert alert-danger" *ngIf="releaseDate.invalid && releaseDate.touched">
+            gerekli alan   
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="categoryName" class="form-label"><b>Kategori</b></label>
+        <textarea class="form-control"  name="categoryName" formControlName="categoryName" ></textarea>
+        <div class="alert alert-danger" *ngIf="categoryName.invalid && categoryName.touched">
+            gerekli alan   
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="imdb" class="form-label"><b>IMDB</b></label>
+        <textarea class="form-control"  name="imdb" formControlName="imdb" ></textarea>
+        <div class="alert alert-danger" *ngIf="imdb.invalid && imdb.touched">
+            gerekli alan   
+        </div>
+    </div> 
+
+   
+    <div class="mb-3">
+        <label for="imageUrl" class="form-label"><b>Resim Bilgisi</b> </label>
+        <input type="text"  name="imageUrl" class="form-control" formControlName="imageUrl">
+        <div class="alert alert-danger" *ngIf="imageUrl.invalid && imageUrl.touched">
+            <p *ngIf="imageUrl.errors.wrongExtension">hatalı resim uzantısı</p>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="trailer" class="form-label"><b>Fragman Linki</b> </label>
+        <input type="text"  name="trailer" class="form-control" formControlName="trailer">
+        <div class="alert alert-danger" *ngIf="trailer.invalid && trailer.touched">
+            gerekli alan   
+        </div>
+    </div>
+
+    <div class="mb-3" style="width: 200px;">
+        <label for="categoryId" class="form-label"><b>Kategori</b></label>
+        <select  name="categoryId" class="form-select" formControlName="categoryId" >
+            <option value="">Seçiniz </option>
+            <option *ngFor="let item of categories" [value]="item.id">{{ item.name }}</option>
+        </select>
+        <div class="alert alert-danger" *ngIf="categoryId.invalid && categoryId.touched">
+            gerekli alan   
+        </div>
+        
+        
+    </div>
+
+    <button [disabled]="movieForm.invalid" type="submit" class="btn btn-primary" >Ekle</button>
+    <button  class="btn btn-warning ms-2" (click)="clearForm()" >Temizle</button>
+
+
+</form>

@@ -1,0 +1,38 @@
+
+<nav class="navbar navbar-expand-md navbar-dark ">
+    <div class="container" >
+      <a class="navbar-brand" href="#"  style="color: #82AAE3;"> FiMDB </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto ">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Kategoriler
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><app-category></app-category></li>
+                    </ul>
+                </li> 
+                <!-- <li *ngIf="isAuthenticated" class="nav-item">
+                  <a routerLink="/movies" class="nav-link active">Listem</a>
+                </li> -->
+                <li *ngIf="isAuthenticated" class="nav-item">
+                  <a routerLink="/movies/create" class="nav-link active">Film ekle</a>
+                </li>
+            </ul> 
+            <ul  class="navbar-nav ">
+              <li *ngIf="!isAuthenticated"   class="nav-item">
+                <a routerLink="/auth" class="nav-link">Giriş yap</a>
+              <li *ngIf="isAuthenticated"  class="nav-item">
+                <a (click)="onLogout()" class="nav-link">Çıkış yap</a>
+              </li>
+            </ul> 
+      </div>
+    </div>
+  </nav>
+  
+  
+  

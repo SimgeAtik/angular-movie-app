@@ -1,0 +1,65 @@
+
+
+<div *ngIf="!loading">
+    <div *ngIf="movie else no_movie">
+        <div class="card">
+            <div class="row">
+                <div class="col-8"> {{ movie.title }}</div>
+                <div class="col-4">
+                   <p>IMDB {{ movie.imdb }}</p> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="assets/images/{{ movie.imageUrl }}" style="width: 300px;" class="img-fluid rounded-start" alt="">   
+                        <a class="trailer" href="{{ movie.trailer}}"  target="_blank">
+                            <button>Fragman</button>
+                        </a>       
+                        <button class="addliste" (click)="addList()">Listeye ekle</button>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">                       
+                        <p class="scroll" >&nbsp;{{ movie.description }}</p>
+                        <table>         
+                            <tr>
+                                <th>Yönetmen</th>
+                                <td>:{{ movie.director }}</td>
+                            </tr>
+                            <tr>
+                                <th>oyuncular</th>
+                                <td>:{{ movie.actors }} </td>
+                            </tr>
+                            <tr>
+                                <th>Yapım </th>
+                                <td>:{{ movie.releaseDate }}</td>
+                            </tr>
+                            <tr>
+                                <th>Kategori </th>
+                                <td>:{{ movie.categoryName }}</td>
+                            </tr>
+                            <tr>
+                                <th>IMDB</th>
+                                <td>:{{ movie.imdb }}</td>
+                            </tr>
+                        </table>                   
+                    </div>        
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<ng-template  #no_movie>
+    <div class="alert alert-warning">
+    Film bulunamadı.
+    </div>
+  </ng-template>
+
+  
+<div  *ngIf="loading" class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  
+  
+
